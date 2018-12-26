@@ -1,12 +1,14 @@
 {
   "parser": "babel-eslint",
   "extends": "standard",
+  "plugins": ["prettier"],
+  "rules": {
+    "semi": [2, "always"],
+    "prettier/prettier": "error"
+  },
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module"
-  },
-  "rules": {
-    "import/no-unresolved": [2]
   },
   "env": {
     "browser": true

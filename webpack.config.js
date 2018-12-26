@@ -1,16 +1,17 @@
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+var path = require('path');
+var webpack = require('webpack');
+var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+
+var definePlugin = new webpack.DefinePlugin({
+  __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'true'))
+});
 
 module.exports = {
   entry: {
-    app: [path.resolve(__dirname, 'src/index.js')]
-    //vendor: ['phaser']
+    app: ['babel-polyfill', path.resolve(__dirname, 'src/main.js')],
+    vendor: ['phaser']
   },
-  mode: 'development',
+  devtool: 'source-map',
   output: {
     pathinfo: true,
     path: path.resolve(__dirname, 'dist'),
@@ -19,11 +20,15 @@ module.exports = {
   },
   watch: true,
   plugins: [
-    new CleanWebpackPlugin(['dist']),
-    new HtmlWebpackPlugin({
-      title: 'Development'
+    definePlugin,
+    new webpack.DefinePlugin({
+      CANVAS_RENDERER: JSON.stringify(true),
+      WEBGL_RENDERER: JSON.stringify(true)
     }),
-    //new CopyWebpackPlugin([{ from: './src/assets', to: './assets' }]),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      filename: 'vendor.bundle.js'
+    }),
     new BrowserSyncPlugin({
       host: process.env.IP || 'localhost',
       port: process.env.PORT || 3000,
@@ -32,20 +37,12 @@ module.exports = {
       }
     })
   ],
-  devtool: 'inline-source-map',
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
-      },
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: ['file-loader']
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: ['file-loader']
+        test: /\.js$/,
+        use: ['babel-loader'],
+        include: path.join(__dirname, 'src')
       }
     ]
   }
