@@ -11,7 +11,15 @@ import Mushroom from '../sprites/Mushroom';
 export default class extends Phaser.Scene {
   constructor() {
     super({
-      key: 'ArcadeScene'
+      key: 'ArcadeScene',
+      physics: {
+        default: 'arcade',
+        arcade: {
+          debug: true,
+          fps: 60,
+          gravity: { y: 200 }
+        }
+      }
     });
   }
   init() {}
@@ -27,6 +35,8 @@ export default class extends Phaser.Scene {
   }
 
   create() {
+    const { width, height } = this.sys.game.config;
+
     this.add.image(400, 300, 'sky');
 
     this.score = 0;
@@ -35,7 +45,7 @@ export default class extends Phaser.Scene {
       fill: '#000'
     });
 
-    this.ball = this.physics.add.image(400, 300, 'mushroom');
+    this.ball = this.physics.add.image(width / 2, height / 2, 'mushroom');
     this.ball.setDamping(true);
     this.ball.setDrag(0.99);
     this.ball.setMaxVelocity(200);

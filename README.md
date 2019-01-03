@@ -121,3 +121,11 @@ https://github.com/RenaudROHLINGER
 
 - [Examples](https://labs.phaser.io/) - Official examples
 - https://rexrainbow.github.io/phaser3-rex-notes/docs/site/
+- [Tiled’s documentation](http://docs.mapeditor.org/en/stable/manual/introduction/)
+- [Game from Scratch Tiled tutorial series](http://www.gamefromscratch.com/post/2015/10/14/Tiled-Map-Editor-Tutorial-Series.aspx)
+- [Dungeon generator library](https://github.com/mikewesthad/dungeon)
+- [Phaser 3 Webpack Project Template](https://github.com/photonstorm/phaser3-project-template)
+
+## Tutorials
+
+- [Modular Game Worlds in Phaser 3](https://medium.com/@michaelwesthadley/modular-game-worlds-in-phaser-3-tilemaps-1-958fc7e6bbd6)
