@@ -1,3 +1,56 @@
+## Fichines
+
+### Acceder a la Rapsberry vía SSH
+
+Primero se realizaron pruebas con Raspi y Johnny-Five...
+
+1.  Escanear red local: `~ ping raspberrypi.local`
+
+Devuelve algo como
+
+```
+PING raspberrypi.local (192.168.1.113): 56 data bytes
+Request timeout for icmp_seq 0
+64 bytes from 192.168.1.113: icmp_seq=0 ttl=64 time=1114.317 ms
+64 bytes from 192.168.1.113: icmp_seq=1 ttl=64 time=109.375 ms
+64 bytes from 192.168.1.113: icmp_seq=2 ttl=64 time=7.389 ms
+...
+```
+
+2.  Conectarse: `~ ssh pi@192.168.1.113`
+
+**(pass por defecto: raspberry)**
+
+## Enlaces útiles
+
+- [Socket.IO Docs](https://socket.io/docs/)
+- [Socket.IO-Client Docs](https://github.com/socketio/socket.io-client)
+- [Phaser3 Examples](http://labs.phaser.io)
+- [Phaser3 and React Game Example](https://codepen.io/Hamatek/pen/mEBJpK)
+- [Phaser React and Redux context](https://github.com/photonstorm/phaser/issues/3532)
+- [How to code the “Game of Life” with React](https://medium.freecodecamp.org/create-gameoflife-with-react-in-one-hour-8e686a410174)
+- [Timers in Node](https://nodejs.org/en/docs/guides/timers-in-node/)
+- [React router navigate programmatically](https://www.webdeveloperpal.com/2018/03/07/react-router-v4-navigate-and-redirect-programmatically/)
+- [Ract phaser2 boilerplate](https://github.com/ArcQ/phaser-react-starter/)
+
+* [Computer Vision for Artists and Designers: Pedagogic Tools and Techniques for Novice Programmers](http://www.flong.com/texts/essays/essay_cvad/) - By Golan Levin
+* [Intermediate Computer Vision with openFrameworks](https://github.com/kylemcdonald/ofxCv/wiki/Intermediate-Computer-Vision-with-openFrameworks) - By Kyle McDonald
+
+* [Raspi-IO](https://github.com/nebrius/raspi-io/) - An IO plugin for Johnny-Five that provides support for the Raspberry Pi
+* [Johnny-Five](http://johnny-five.io/) - JavaScript Robotics & IoT Platform
+* [Hello Johnny-Five](https://www.hackster.io/IainIsCreative/setting-up-the-raspberry-pi-and-johnny-five-56d60f)
+* [Ejemplo Relay con Johnny-Five](http://johnny-five.io/examples/relay/)
+* [Otro ejemplo de Relay](https://bocoup.com/blog/javascript-relay-with-johnny-five)
+* [The comprehensive GPIO Pinout guide for the Raspberry Pi.](https://pinout.xyz/)
+
+* [OpenCV](https://docs.opencv.org/3.3.1/d5/d10/tutorial_js_root.html) - Introduction to OpenCV.js and Tutorials
+
+### Tutoriales
+
+- https://codeburst.io/isomorphic-web-app-react-js-express-socket-io-e2f03a469cd3
+- https://tutorialedge.net/javascript/react/react-socket-io-tutorial/
+- https://www.valentinog.com/blog/socket-io-node-js-react/
+
 # Phaser + ES6 + Webpack.
 
 #### A bootstrap project to create games with Phaser + ES6 + Webpack.
